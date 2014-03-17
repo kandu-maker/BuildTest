@@ -28,4 +28,8 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+<<<<<<< HEAD
 *.sublime-workspace
+=======
+*.sublime-workspace
+>>>>>>> FETCH_HEAD
