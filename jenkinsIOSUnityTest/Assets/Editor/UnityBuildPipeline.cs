@@ -13,7 +13,7 @@ public class UnityBuildPipeline {
 	static void PerformIOSBuild ()
 	{
 		BuildOptions buildOptions;
-		string baseProjectPath = (Application.dataPath.Replace(GetProjectName()+"/Assets",""));
+		string baseProjectPath = (Application.dataPath.Replace(GetParentDirectory()+"/"+GetProjectName()+"/Assets",""));
 		string outputPath = baseProjectPath+APP_NAME;
 		
 		Debug.Log ("basePath:"+baseProjectPath);
@@ -57,5 +57,13 @@ public class UnityBuildPipeline {
 		string projectName = s[s.Length - 2];
 		Debug.Log("project = " + projectName);
 		return projectName;
+	}
+
+	static public string GetParentDirectory()
+	{
+		string[] s = Application.dataPath.Split('/');
+		string parentDirectoryName = s[s.Length - 3];
+		Debug.Log("Parent Directory = " + parentDirectoryName);
+		return parentDirectoryName;
 	}
 }
