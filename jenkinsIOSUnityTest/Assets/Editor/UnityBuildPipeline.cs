@@ -13,7 +13,9 @@ public class UnityBuildPipeline {
 	static void PerformIOSBuild ()
 	{
 		BuildOptions buildOptions;
-		string baseProjectPath = (Application.dataPath.Replace(GetParentDirectory()+"/"+GetProjectName()+"/Assets",""));
+		//string baseProjectPath = (Application.dataPath.Replace(GetParentDirectory()+"/"+GetProjectName()+"/Assets",""));
+		string baseProjectPath = (Application.dataPath.Replace(GetProjectName()+"/Assets",""));
+
 		string outputPath = baseProjectPath+APP_NAME;
 		
 		Debug.Log ("basePath:"+baseProjectPath);
